@@ -105,7 +105,7 @@ namespace Request_form
 
                     if (i > 0)
                     {
-                        ClearControlBound()
+                        ClearControlBound();
                         ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert",
                           "swal('Request was Successfully Deleted','Thank you','success')", true);
                     }
