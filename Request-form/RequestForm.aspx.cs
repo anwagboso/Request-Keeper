@@ -62,7 +62,7 @@ namespace Request_form
                 int i = db.SaveChanges();
                 if (i > 0)
                 {
-
+                    ClearControlBound();
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert",
                       "swal('Request was Successfully Submitted','Thank you','success')", true);
                 }
@@ -76,7 +76,16 @@ namespace Request_form
 
 
         }
+        protected void ClearControlBound()
+        {
+           this.txtFirstName.Text ="";
+           this.txtLastName.Text = "";
+           this.txtAddress.Text = "";
+           this.txtPhoneNo.Text = "";
+           this.txtRequestNote.Text = "";
 
+        }
+       
         protected void Button2_Click(object sender, EventArgs e)
         {
             try 

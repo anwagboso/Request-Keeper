@@ -88,6 +88,51 @@ namespace Request_form
 
             }
         }
+        
+
+        protected void BtnDeletRequest_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int xx = int.Parse(Session["RequestId"].ToString());
+                CustomerRequestLogDBEntities1 EdittedRec = new CustomerRequestLogDBEntities1();
+                var empEditted = EdittedRec.tbl_Request.Where(x => x.Id == xx).FirstOrDefault();
+                if (empEditted != null)
+                {
+                    EdittedRec.tbl_Request.Remove(empEditted);
+                    int i = EdittedRec.SaveChanges();
+                    //db.Entry(emp).State = System.Data.Entity.EntityState.Modified
+
+                    if (i > 0)
+                    {
+                        ClearControlBound()
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert",
+                          "swal('Request was Successfully Deleted','Thank you','success')", true);
+                    }
+                    else
+                    {
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert",
+                          "swal('Unable to delete request ','something went wrong','error')", true);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ErrorSignal.FromContext(Context).Raise(ex);
+
+            }
+
+        }
+        protected void ClearControlBound()
+        {
+            this.txtFirstName.Text = "";
+            this.txtLastName.Text = "";
+            this.txtAddress.Text = "";
+            this.txtPhoneNo.Text = "";
+            this.txtRequestNote.Text = "";
+
+        }
 
         protected void Button2_Click(object sender, EventArgs e)
         {

@@ -5,7 +5,7 @@
 
      <div class="container" style=" margin-top:50px" >    
      <div class="form-group">
-       <label for="exampleInputPassword1">Decagon Student Request Details Keeper</label>
+       <label for="exampleInputPassword1">Decagon Student Request Keeper</label>
        
          <asp:GridView ID="dgDetails" ClientIDMode="Static" runat="server" CssClass="table table-bordered table-striped table-condensed flip-content" OnPreRender="dgDetails_PreRender"  AutoGenerateColumns="False" onrowcommand="dgDetails_RowCommand"  >
              <Columns>
@@ -14,6 +14,7 @@
       <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
       <asp:BoundField DataField="lastName" HeaderText="LastName" SortExpression="lastName" />
       <asp:BoundField DataField="PhoneNo" HeaderText="PhoneNo" SortExpression="PhoneNo" />
+      <asp:BoundField DataField="RequestDate" HeaderText="RequestDate" DataFormatString="{0:dd/MM/yyyy}"  SortExpression="RequestDate" />
       
       
       
