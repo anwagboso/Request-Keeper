@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Request_form.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+         <script  src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<link href="css/bootstrap.css" rel="stylesheet" />
+      <%-- bootstrap Table CSS  Begin --%>
+      
+ <%-- bootstrap Table CSS  Begin --%>
+     
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">   
+<link href=" https://cdn.datatables.net/2.0.1/css/dataTables.bootstrap5.css" rel="stylesheet">  
+
+
+<%-- bootstrap Table CSS  End--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+ <%-- bootstrap Table JS  Begin --%>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+     <script type="text/javascript" src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
+ 
+    <script>
+
+        $(document).ready(function () {
+            $('#dgDetails').DataTable();
+        });
+  </script>
+
+
+
+<%-- bootstrap Table JS  End --%>
+</body>
+</html>
