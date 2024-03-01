@@ -28,7 +28,7 @@
   
  <%-- <button type="submit" class="btn btn-primary">Submit</button>--%>
         <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Update" OnClick="Button1_Click" />
-
+             <asp:Button ID="BtnDeletRequest" class="btn btn-danger" runat="server" Text="Delete " OnClick="BtnDeletRequest_Click" />
         <asp:Button ID="Button2" class="btn btn-primary" runat="server" Text="<< Back " OnClick="Button2_Click" />
 </div>
 </asp:Content>
